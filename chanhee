@@ -1,0 +1,106 @@
+# 튜플 tuple
+# t1 = (1,)  #tuple이 원소를 하나 가질 경우에는 ','를 써야 한다.
+# t2 = (1,2,3)
+# l1 = [1,2,3]
+# t3 = tuple(l1)
+# t4 = 1,2,3
+# print(type(t1),type(t2),type(t3),type(t4))
+
+# tuple은 값의 생성, 수성, 식제가 불가는한 immutable한 자료형이다.
+# t1 = (1,2,3,4)
+# 삭제
+# del t1[1] #결과 'tuple' object doesn't support item deletion
+#수정
+# t1[1] = 5 # 결과 =>'tuple' object does not support item assignment
+
+# t1 = (1,2,3)
+# t2 = (4,5,6)
+# 튜플끼리의 덧셈
+# print(t1+t2) #출력값 => (1,2,3,4,5,6)
+# print(t2 *2) #출력값 => (4,5,6,4,5,6)
+# print(t1[1]) #출력값 => 2
+# print(t2[1:]) #출력값 => (5,6)
+# print(len(t1)) #출력값 => 3
+
+# 딕셔너리 dictionary
+# 딕셔너리 생성
+# d1 = {"key": "value"}
+# a = ["Hello"]
+# b = ["Python"]
+# d2 = dict(zip(a,b))
+# print(d2, type(d2)) #출력값 => {"Hello":"Python"} , class <'dict'
+
+# 딕셔너리의 key값을 이용해서 value값 뽑아내기
+# print(d1["key"]) #출력값 => "value"
+
+# d1 = {"apple": "사과", "banana":"바나나"}
+# 추가
+# d1["복숭아"] = 'peach'
+# 삭제
+# del d1["banana"]
+# 수정
+# d1["apple"] = "수박"
+# print(d1) #출력값 =>{"apple": "수박", "복숭아": "peach"}
+
+#주의할 점
+# key값을 중복해서 사용한다면, 마지막 key값의 value값이 사용된다.
+# d1 = {"A":"에이","A":"비" }
+# print(d1["A"]) #=> 비
+
+# key값에 변할 수 있는 자료형을 사용할 경우
+# d2 = {[1,2,3]: "숫자"} #=>
+# d3 = {(1,2,3): "숫자"}
+# print(d3(1,2,3)) #=> 숫자
+
+# d1 = {"A" : 1, "B": 2, "C": 3}
+# key값들로 된 자료 만들기
+# print(d1.keys()) # => dict_keys[A,B,C]
+# value값들로 된 자료 만들기
+# print(d1.values()) # => dict_values([1,2,3])
+# (key. value)로 이루어진 자료 만들기
+# print(d1.items()) # => dict_items([('A', 1), ("B" , 2), ("C", 3)])
+# 만들어진 자료들은 리스트 처럼 사용 가능하다.
+# for i in d1.keys():
+#     print(i)
+    # => A
+    # => B
+    # => C
+
+# 집합 Set
+# s1 = set([1,2,3])
+# print(s1) #=> {1,2,3}
+# s2 = set("Hello")
+# print(s2) #=> {'l', 'H', 'e', 'o'}
+# 중복된 문자 '1'이 한개만 출력되었으며. 순서가 없기 때문에 출력할 때마다 순서가 바뀐다.
+
+# 합,교,차집합
+# s1 = set([1,2,3,4])
+# s2 = set([3,4,5])
+# s3 = set([6,7,8])
+
+# 합
+# print(s1 ㅣ s2)
+# print(s2 ㅣ s3)
+
+# 교
+# print(s1 & s2)
+# print(s2 &s3)
+
+# 차
+# print(s1 - s2)
+# print(s2 - s3)
+
+# 전화번호 목록
+# def solution(phone_book):
+#     phone_book.sort()
+#     for i in range(len(phone_book)-1):
+#         if phone_book[i] == phone_book[i+1][:len(phone_book[i])]:
+#             return False
+#     return True
+#
+# phone_book = ["119", "97674223", "1195524421"]
+# print(solution(phone_book))
+
+# l1 = ["AB","BC","DE"]
+# l2 = ["AD","DE","BD"]
+# print(set(l1) & set(l2))
